@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": "arn:aws:logs:us-east-1:156515539745:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+      ],
+      "Resource": [
+          "arn:aws:logs:us-east-1:156515539745:log-group:/aws/lambda/try_pandas:*"
+      ]
+    },
+    {
+      "Action": "logs:*",
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
